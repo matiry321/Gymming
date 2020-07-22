@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnPlans"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="237dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:text="Your Plans"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnAllActivities"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_below="@+id/btnPlans"
+        android:text="All activities"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnAbout"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_below="@+id/btnAllActivities"
+        android:text="about"
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>
