@@ -1,6 +1,43 @@
 package com.example.gymming;
 
-public class Modelclass {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Modelclass implements Parcelable {
+    protected Modelclass(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        shortdescp = in.readString();
+        longdescp = in.readString();
+        imageUrl = in.readString();
+    }
+
+    public static final Creator<Modelclass> CREATOR = new Creator<Modelclass>() {
+        @Override
+        public Modelclass createFromParcel(Parcel in) {
+            return new Modelclass(in);
+        }
+
+        @Override
+        public Modelclass[] newArray(int size) {
+            return new Modelclass[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(shortdescp);
+        dest.writeString(longdescp);
+        dest.writeString(imageUrl);
+    }
+
     private int id;
     private String name;
     private String shortdescp;

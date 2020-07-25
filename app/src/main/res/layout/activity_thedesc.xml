@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThedescActivity">
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:text="Add To Your Plan"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Addtoplan"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Addtoplan"
+        android:layout_marginTop="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Training Name"
+                android:id="@+id/trainingname"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_below="@+id/trainingname"
+                android:id="@+id/imgofexerc"
+                android:src="@mipmap/ic_launcher_round"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="330dp"
+                android:text="Long desciption"
+                android:layout_below="@+id/imgofexerc"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/longdesc"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

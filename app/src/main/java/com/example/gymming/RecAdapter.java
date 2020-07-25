@@ -1,6 +1,7 @@
 package com.example.gymming;
 
 
+import android.content.Intent;
 import android.icu.text.Normalizer2;
 import android.text.Layout;
 import android.util.Log;
@@ -23,9 +24,12 @@ import java.util.ArrayList;
 public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> //use ctrl+space
  {
      private static final String TAG = "TrainingAdapter";
+     private static final String TRAINING_KEY="trainings";
+
      private ArrayList<Modelclass> exercises=new ArrayList<>();
      private Context mContext;
-     public RecAdapter()
+
+     public RecAdapter(Context mContext)
      {
          this.mContext=mContext;
      }
@@ -35,28 +39,28 @@ public class RecAdapter extends RecyclerView.Adapter<RecAdapter.RecViewHolder> /
      public RecViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) //creates the view holder to hold our views
       {
          //LayoutInflater inflater=LayoutInflater.from(mContext);
-         View view =LayoutInflater.from(mContext).inflate(R.layout.exercise_layout,parent,false);//LAyoutInflater class returns us view object in corresponding to all the view in the layout file
+         View view =LayoutInflater.from(parent.getContext()).inflate(R.layout.exercise_layout,parent,false);//LAyoutInflater class returns us view object in corresponding to all the view in the layout file
          return new RecViewHolder(view);
      }
 
      @Override
-     public void onBindViewHolder(@NonNull RecViewHolder holder, int position)
+     public void onBindViewHolder(@NonNull RecViewHolder holder,final int position)
      {
         Log.d(TAG,"onBindViewHolder: Called");
 
-        holder.activityname.setText(Modelclass.get(position).getName());
-        holder.shortDesc.setText(Modelclass.get(position).getShortdescp());
+        holder.activityname.setText(exercises.get(position).getName());
+        holder.shortDesc.setText(exercises.get(position).getShortdescp());
          Glide.with(mContext)
                  .asBitmap()
-                 .load(Modelclass.get(position).getImageUrl())
+                 .load(exercises.get(position).getImageUrl())
                  .into(holder.image);
 
          holder.parent.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Toast.makeText(mContext, "Yet to be completed", Toast.LENGTH_SHORT).show();
-
-
+                 Intent intent=new Intent(mContext,ThedescActivity.class);
+                 intent.putExtra(TRAINING_KEY,exercises.get(position));
+                 mContext.startActivity(intent);
              }
          });
 
