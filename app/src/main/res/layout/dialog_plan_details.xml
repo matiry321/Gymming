@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Details"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:id="@+id/Enterdetails"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Training Name"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/Enterdetails"
+        android:textSize="20dp"
+        android:id="@+id/trainingname"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How much time do you have in time"
+        android:layout_below="@+id/trainingname"
+        android:textSize="20sp"
+        android:id="@+id/howmuch"
+        android:padding="10dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/howmuch"
+        android:id="@+id/edittext"
+        android:hint="minutes"
+        android:textSize="20sp"
+        android:layout_marginLeft="120dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select the day"
+        android:id="@+id/select"
+        android:layout_below="@+id/edittext"
+        android:layout_marginLeft="98dp"
+        android:textSize="20sp"
+        android:layout_marginTop="5dp"/>
+    <Spinner
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/select"
+        android:entries="@array/days"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/spinner"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Dismiss"
+        android:id="@+id/dismiss"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="10dp"
+        android:text="Add"
+        android:id="@+id/add"/>
+
+</RelativeLayout>
