@@ -16,7 +16,19 @@ import com.bumptech.glide.Glide;
 public class ThedescActivity extends AppCompatActivity implements PlanDetailDialog.PassPlanInterface {
     private static final String TAG="TheDescActivity";
 
-    private static final String TRAINING_KEY = "training";
+    private static final String TRAINING_KEY = "trainings";
+
+    @Override
+    public void getPlan(Plan plan) {
+        Log.d(TAG,"getPlan:Plan" +plan.toString());
+        if(Utils.addPlan(plan))
+        {
+            Toast.makeText(this, plan.getTraining().getName()+"Added to ur plan", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(this,PlanActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        }
+    }
     private Button Addtoplan;
     private TextView trainingname,longdesc;
     private ImageView imgofexerc;
@@ -64,15 +76,5 @@ public class ThedescActivity extends AppCompatActivity implements PlanDetailDial
         imgofexerc=findViewById(R.id.imgofexerc);
     }
 
-    @Override
-    public void getPlan(Plan plan) {
-        Log.d(TAG,"getPlan:Plan" +plan.toString());
-        if(Utils.addPlan(plan))
-        {
-            Toast.makeText(this, plan.getTraining().getName()+"Added to ur plan", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(this,PlanActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-    }
+
 }

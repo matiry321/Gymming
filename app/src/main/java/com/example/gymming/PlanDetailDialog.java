@@ -20,30 +20,32 @@ public class PlanDetailDialog extends DialogFragment {
         void getPlan(Plan plan);
     }
     private PassPlanInterface passPlanInterface;
-    private static final String TRAINING_KEY = "training";
+    private static final String TRAINING_KEY = "trainings";
     private Button dismiss,add;
-    private EditText howmuch;
-    private TextView edittext;
+    private EditText edittext;
+    private TextView howmuch,trainingname;
     private Spinner spinner;
 
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
         View view=getActivity().getLayoutInflater().inflate(R.layout.dialog_plan_details,null);//getActivity to get access to parent activity
         initViews(view);
 
         AlertDialog.Builder builder= new AlertDialog.Builder(getActivity())
                 .setView(view)
-                .setTitle("Enter Details");
+                .setTitle("");
+       // return builder.create();
 
-        Bundle bundle=getArguments();
+        Bundle bundle = getArguments();
         if(null!=bundle)
         {
             final Modelclass training = bundle.getParcelable(TRAINING_KEY);
             if(null!=training)
             {
-                edittext.setText(training.getName());
+                trainingname.setText(training.getName());
                 dismiss.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -59,9 +61,9 @@ public class PlanDetailDialog extends DialogFragment {
 
                         try {
 
-                                passPlanInterface=(PassPlanInterface)getActivity();
-                                passPlanInterface.getPlan(plan);
-                                dismiss();
+                            passPlanInterface=(PassPlanInterface) getActivity();
+                            passPlanInterface.getPlan(plan);
+                            dismiss();
                             }
                             catch(ClassCastException e)
                             {
@@ -84,5 +86,6 @@ public class PlanDetailDialog extends DialogFragment {
         howmuch=view.findViewById(R.id.howmuch);
         edittext=view.findViewById(R.id.edittext);
         spinner=view.findViewById(R.id.spinner);
+        trainingname=view.findViewById(R.id.trainingname);
     }
 }

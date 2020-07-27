@@ -32,32 +32,15 @@ public class PlanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
-        Mondayedit = findViewById(R.id.Mondayedit);
-        Tuesdayedit = findViewById(R.id.Tuesdayedit);
-        Wednesdayedit = findViewById(R.id.Wednesdayedit);
-        Thursdayedit = findViewById(R.id.Thursdayedit);
-        Fridayedit = findViewById(R.id.Fridayedit);
-        Saturdayedit = findViewById(R.id.Saturdayedit);
-        Sundayedit = findViewById(R.id.Sundayedit);
-        addplan = findViewById(R.id.addplan);
-        rec1 = findViewById(R.id.rec1);
-        rec2 = findViewById(R.id.rec2);
-        rec3 = findViewById(R.id.rec3);
-        rec4 = findViewById(R.id.rec4);
-        rec5 = findViewById(R.id.rec5);
-        rec6 = findViewById(R.id.rec6);
-        rec7 = findViewById(R.id.rec7);
-        noplanRel = findViewById(R.id.noplanRel);
-        scroll = findViewById(R.id.scroll);
+        initViews();
 
-        ArrayList<Plan> plans=Utils.getPlans();
+        ArrayList<Plan> plans = Utils.getPlans();
         if(null!=plans)
         {
             if (plans.size() > 0)
             {
                 noplanRel.setVisibility(View.GONE);
                 scroll.setVisibility(View.VISIBLE);
-
                 initRecview();
                 setEditOnClickListener();
             }
@@ -194,11 +177,33 @@ public class PlanActivity extends AppCompatActivity {
             }
             return plans;
         }
-
-    @Override
-    public void onBackPressed() {
+       @Override
+       public void onBackPressed() {
         Intent intent=new Intent(this,MainActivity2.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+        private void initViews()
+        {
+            Mondayedit = findViewById(R.id.Mondayedit);
+            Tuesdayedit = findViewById(R.id.Tuesdayedit);
+            Wednesdayedit = findViewById(R.id.Wednesdayedit);
+            Thursdayedit = findViewById(R.id.Thursdayedit);
+            Fridayedit = findViewById(R.id.Fridayedit);
+            Saturdayedit = findViewById(R.id.Saturdayedit);
+            Sundayedit = findViewById(R.id.Sundayedit);
+            addplan = findViewById(R.id.addplan);
+            rec1 = findViewById(R.id.rec1);
+            rec2 = findViewById(R.id.rec2);
+            rec3 = findViewById(R.id.rec3);
+            rec4 = findViewById(R.id.rec4);
+            rec5 = findViewById(R.id.rec5);
+            rec6 = findViewById(R.id.rec6);
+            rec7 = findViewById(R.id.rec7);
+            noplanRel = findViewById(R.id.noplanRel);
+            scroll = findViewById(R.id.scroll);
+        }
+
+
 }

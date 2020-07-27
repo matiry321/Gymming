@@ -17,19 +17,24 @@
             android:textAllCaps="false"
             android:layout_centerInParent="true"
             android:id="@+id/addplan"/>
+
         <TextView
+            android:id="@+id/noplan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="300dp"
-            android:layout_marginLeft="100dp"
-            android:text="You dont have any plans"
-            android:textSize="20sp"
-            android:id="@+id/noplan"/>
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginTop="330dp"
+
+            android:text="You don't have any plans"
+            android:textSize="20sp" />
     </RelativeLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scroll">
+        android:id="@+id/scroll"
+        android:layout_margin="15dp">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">

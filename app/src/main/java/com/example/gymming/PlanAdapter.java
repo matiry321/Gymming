@@ -20,11 +20,11 @@ import com.google.android.material.card.MaterialCardView;
 import java.util.ArrayList;
 
 public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.ViewHolder> {
-    private static final String TRAINING_KEY = "training";
+    private static final String TRAINING_KEY = "trainings";
 
     private ArrayList<Plan> plans = new ArrayList<>();
     private Context context;
-    private String type = "";
+   private String type = "";
 
     public PlanAdapter(Context context)
     {
@@ -65,7 +65,7 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.ViewHolder> {
                 context.startActivity(intent);
             }
         });
-        if(type.equals("edit"))
+       if(type.equals("edit"))
         {
             holder.emptyCircle.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -134,6 +134,7 @@ public class PlanAdapter extends RecyclerView.Adapter<PlanAdapter.ViewHolder> {
 
     @Override
     public int getItemCount() {
+
         return plans.size();
     }
 

@@ -36,6 +36,7 @@ public class Plan implements Parcelable {//Why do we use parcelable
         }
     };
 
+
     public Modelclass getTraining() {
         return training;
     }

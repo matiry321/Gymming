@@ -6,7 +6,13 @@ public class Utils {
     private static ArrayList<Modelclass> exercises;
     private static ArrayList<Plan> plans;
 
+    public Utils() {
+        if(null==plans)
+        {
+            plans=new ArrayList<>();
+        }
 
+    }
 
     public static void initTrainings()
     {
@@ -47,7 +53,8 @@ public class Utils {
     public static ArrayList<Modelclass> getExercises() {
         return exercises;
     }
-    public static boolean addPlan(Plan plan)
+
+   public static boolean addPlan(Plan plan)
     {
         if(null!=plans)
         {
@@ -63,4 +70,8 @@ public class Utils {
     {
         return plans.remove(plan);
     }
+    /*public boolean addPlan(Plan plan)
+    {
+        return plans.add(plan);
+    }*/
 }
