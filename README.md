@@ -1,4 +1,6 @@
-# Gymming
+# Gymming(Health and Fitness Application)
+
+It's a home workout mobile application which provides you various gym trainings and a system to manage the workout daily schedule.
 
 ## Splash Screen, Check Plans and Trainings, If no plan..add
 <img src = "https://user-images.githubusercontent.com/49520756/88540655-fb384d00-d030-11ea-8323-350377780ab7.jpg" width="250">  <img src = "https://user-images.githubusercontent.com/49520756/88541683-d04ef880-d032-11ea-9950-4e4d6a2ebd50.jpg"  width="250"> <img src="https://user-images.githubusercontent.com/49520756/88541884-1ad07500-d033-11ea-8d2f-ae287087ed51.jpg" width="250">
